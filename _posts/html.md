@@ -1,0 +1,501 @@
+---
+published: false
+---
+
+# html 공부
+
+### 1. Basic Structure
+~~~ html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>title</title>
+    </head>
+<body>
+    <h1>heading</h1>
+    <p>paragraph</p>
+</body>
+</html>
+~~~ 
+
+### 2. Major Elements
+- heading: <h1> ~ <h2>
+- paragraph: <p> or <pre>
+- link: <a href="link">
+- br: <br>
+- hr: <hr>
+- formatting elements: <b>, <strong> ...
+- form
+
+### 3. Attributes
+- lang: helps search engine <- html's attribute
+- title: add tooltip to elements
+- style: set styles of element
+- id
+- class
+
+### 4. Headings
+Headings help search engines index file structure.  
+-> needs careful usage
+
+### 5. Paragraphs
+With Html, you cannot change the display by adding extra spaces or extra lines. Browsers automatically removes extra spaces. Line break is decided by browsers size.  
+Solution for this is using <br> or <hr> or <pre> tag.  
+
+### 6. Html Styles
+~~~ html
+<tagname style="property:value;">
+~~~ 
+property is CSS property, value is CSS value.  
+major properties are below
+- background-color
+- color
+- font-family
+- font-size
+- text-align
+- border
+- padding
+- margin
+- float
+
+### 7. HTML Formatting Elements
+- bold: <b>
+- important: <strong>
+- italic: <i>
+- emphasized: <em>
+- marked: <mark>
+- smaller: <small>
+- deleted: <del>
+- inserted: <ins>
+- subscript: <sub>
+- superscript: <sup>
+
+### 8. HTML Quotation and Citation Elements
+- block quote: <blockquote> adds new block of quote
+- short quote: <q> adds quotation mark
+- abbreviations: <abbr> adds dotted line. use this with title attribute
+- contact info: <address> defines contact info with italic
+- work title: <cite> defines title of work with italic
+
+### 9. HTMl Comment
+~~~ html
+<!-- Write yout comments -->
+~~~ 
+
+### 10. HTML Styles- CSS
+1. Inline
+    By using style attribute in elements.
+2. Internal
+   ~~~ html
+  <!DOCTYPE html>
+  <html>
+  <head>
+  <style>
+  body {background-color: powderblue;}
+  h1   {color: blue;}
+  p    {color: red;}
+  </style>
+  </head>
+  <body>
+
+  <h1>This is a heading</h1>
+  <p>This is a paragraph.</p>
+
+  </body>
+  </html>
+   ~~~ 
+3. External
+    ~~~ html
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+    
+    </body>
+    </html>
+    ~~~ 
+
+### 11. HTML Links
+- Target Attribute
+    1. _self: current tab
+    2. _blank: new tab
+    3. _parent: parent frame
+    4. _top: full body of the window
+- Can use image as a link
+- Link to an email address
+    ~~~ html
+    <a href="mailto:someone@example.com">Send email</a>
+    ~~~ 
+- Add title to link
+- Different colors: define style using internal CSS style
+    1. a:link: default
+    2. a:visited: visited
+    3. a:hover: hovered
+    4. a:active: pressing
+-Link other elements using id
+    ~~~ html
+    <h2 id="C4">Chapter 4</h2>
+    <a href="#C4">Jump to Chapter 4</a>
+    <a href="html_demo.html#C4">Jump to Chapter 4</a>
+    ~~~ 
+
+### 12. HTML Images
+1. Images
+    - Alows animated images by using gif format
+    - Use float CSS property to merge image with texts
+2. Image Maps
+3. Background Image
+    ~~~ html
+    <p style="background-image: url('img_girl.jpg');">
+    ~~~ 
+    ~~~ html
+    <style>
+    body {background-image: url('img_girl.jpg');}
+    background-repeat: no-repeat;
+    </style>
+    ~~~ 
+    By using *background-repeat* property, you can avoid repeating images.  
+4. <picture> Element
+    ~~~ html
+    <picture>
+      <source media="(min-width: 650px)" srcset="img_food.jpg">
+      <source media="(min-width: 465px)" srcset="img_car.jpg">
+      <img src="img_girl.jpg">
+    </picture>
+    ~~~ 
+    ~~~ html
+    <picture>
+      <source srcset="img_avatar.png">
+      <source srcset="img_girl.jpg">
+      <img src="img_beatles.gif" alt="Beatles" style="width:auto;">
+    </picture>
+    ~~~ 
+    Use Picture Element when your image might be too big for some devices. Also, you can use this to give various formats of same image to browser.  
+    
+### 13. Favicon
+    ~~~ html
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    ~~~ 
+    
+### 14. HTML Table
+    ~~~ html
+    <table>
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+    </table>
+    ~~~ 
+
+### 15. HTML Lists
+Unordered List
+~~~ html
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+~~~ 
+Ordered List
+~~~ html
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+~~~ 
+
+### 16. HTML Block and Inline 
+1. Block-level Elements
+    - <div>: divide area
+    - <p>: add paragraph -> cannot include block elements
+2. Inline Elements
+    - <span>: inline container
+    
+### 17. HTML Class
+~~~ html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.note {
+  font-size: 120%;
+  color: red;
+}
+</style>
+</head>
+<body>
+
+<h1>My <span class="note">Important</span> Heading</h1>
+<p>This is some <span class="note">important</span> text.</p>
+
+</body>
+</html>
+~~~ 
+Used to access elements from style sheet or javascript.  
+One element can have multiple classes and different types of elements can have same class.
+
+### 18. Html ID
+id attribute is used to specify a unique id for an element.  
+Difference between class is its uniqueness.  
+~~~ html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myHeader {
+  background-color: lightblue;
+  color: black;
+  padding: 40px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1 id="myHeader">My Header</h1>
+
+</body>
+</html>
+~~~ 
+
+### 19. HTML iframes
+~~~ html
+<iframe src="demo_iframe.htm" name="iframe_a" title="Iframe Example"></iframe>
+
+<p><a href="https://www.w3schools.com" target="iframe_a">W3Schools.com</a></p>
+~~~ 
+iframe can be targetted by hyperlink.  
+
+### 20. HTML Forms
+- <form> element is used to create HTML form for user input.
+    1. action attribute: defines the action to be performed when the form is submitted.
+    2. target attribute: defines where to display the response after submitting the form
+        - _self: current tab
+        - _blank: new tab
+        - _parent: parent frame
+        - _top: full body of window
+        - *framename*: iframe
+    3. method attribute: specifies http method to be used when submitting the data
+        - get
+        - post
+    4. autocomplete attribute: specifies whether to auto complete the form with user's past records.
+    5. novalidate attribute: when present, means not to validate submitted data.
+
+### 21. HTML Form elements
+<form> element can contain one or more of following form elements.  
+1. <input>
+2. <label>
+3. <select>  
+    The <select> element defines a drop-down list:
+    ~~~ html
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars" size="4" multiple>
+      <option value="volvo" selected>Volvo</option>
+      <option value="saab">Saab</option>
+      <option value="fiat">Fiat</option>
+      <option value="audi">Audi</option>
+    </select>
+    ~~~ 
+    Attribute size defines visible values, and multiple defines whether multiple selection is possible.
+4. <textarea>
+    The <textarea> element defines a multi-line input field (a text area):
+    ~~~ html
+    <textarea name="message" rows="10" cols="30">
+    The cat was playing in the garden.
+    </textarea>
+    ~~~ 
+5. <button>
+    The <button> element defines a clickable button:
+    ~~~ html
+    <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+    ~~~ 
+6. <fieldset> and <legend>
+    makes group, and add title.
+    ~~~ html    
+    <form action="/action_page.php">
+      <fieldset>
+        <legend>Personalia:</legend>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+      </fieldset>
+    </form>
+    ~~~ 
+7. <datalist>
+    Specifies a list of pre-defined options for <input> element>
+    ~~~ html
+    <form action="/action_page.php">
+      <input list="browsers">
+      <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+      </datalist>
+    </form>
+    ~~~ 
+    list attribute must refer to id of datalist.
+8. <output>
+9. <option>
+10. <optgroup>
+
+### 22. HTML Input Types
+1. text:single line text input
+    ~~~ html
+    <form>
+        <label for="fname">First Name: </label><br>
+        <input type="text" id="fname" name="fname" value=First Name><br>
+    </form>
+    ~~~ 
+2. radio: select one of many
+    ~~~ html
+    <form>
+        <input type="radio" id="css" name="survey" value="CSS>
+        <label for="css">CSS</label><br>
+        <input type="radio" id="html" name="survey" value="HTML>
+        <label for="html">HTML</label><br>
+    </form>
+    ~~~ 
+    <input>'s attribute name should be same and always needs value attribute.
+3. checkbox: select zero or more of many
+    ~~~ html
+    <form>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <label for="vehicle1"> I have a bike</label><br>
+      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+      <label for="vehicle2"> I have a car</label><br>
+      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+      <label for="vehicle3"> I have a boat</label>
+    </form>
+    ~~~ 
+    <input> always needs value attribute.  
+4. submit: submit the form
+    ~~~ html
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="John"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Doe"><br><br>
+      <input type="submit" value="Submit">
+    </form>
+    ~~~ 
+    Defines a button for submitting the form data to a form-handler.  
+5. button: clickable button
+6. password: defines password field
+    ~~~ html
+    <form>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="pwd">Password:</label><br>
+      <input type="password" id="pwd" name="pwd">
+    </form>
+    ~~~ 
+    characters in the field gets masked.
+7. reset: reset all form values to their default values
+    ~~~ html
+    <form action="/action_page.php">
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname" value="John"><br>
+      <label for="lname">Last name:</label><br>
+      <input type="text" id="lname" name="lname" value="Doe"><br><br>
+      <input type="submit" value="Submit">
+      <input type="reset">
+    </form>
+    ~~~ 
+8. button
+    ~~~ html
+    <input type="button" onclick="alert('Hello World!')" value="Click Me!">
+    ~~~ 
+9. color: gets input of a color
+    ~~~ html
+    <form>
+      <label for="favcolor">Select your favorite color:</label>
+      <input type="color" id="favcolor" name="favcolor">
+    </form>
+    ~~~ 
+10. date
+    ~~~ html
+    <form>
+      <label for="birthday">Birthday:</label>
+      <input type="date" id="birthday" name="birthday">
+    </form>
+    ~~~ 
+11. datetime-local
+    includes time.
+12. email
+    ~~~ html
+    <form>
+      <label for="email">Enter your email:</label>
+      <input type="email" id="email" name="email">
+    </form>
+    ~~~ 
+    Some browsers automatically validate the input, and some smartphones add .com key to its keyboard.
+13. image: defines an image as a submit button
+    ~~~ html
+    <input type="image" src="img_submit.gif" alt="Submit" width="48" height="48">
+    ~~~ 
+14. file
+    ~~~ html
+    <form>
+      <label for="myfile">Select a file:</label>
+      <input type="file" id="myfile" name="myfile">
+    </form>
+    ~~~ 
+15. hidden: defines hidden input file
+    ~~~ html
+    <form>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname" name="fname"><br><br>
+      <input type="hidden" id="custId" name="custId" value="3487">
+      <input type="submit" value="Submit">
+    </form>
+    ~~~ 
+16. number
+17. range
+18. search: behaves like a regular text field
+19. tel: telephone number
+20. time
+21. url
+    
+### 23. HTML Input Attributes
+1. value: initial value
+2. readonly
+3. disabled
+4. size: width of a input field
+5. maxlength
+6. min, max
+7. multiple: allow user to select multiple files
+8. pattern
+9. placeholder: specifies hint value
+10. required
+11. step
+12. autofocus
+13. list
+14. autocomplete
+
+
+    
+
+
+
+

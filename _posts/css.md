@@ -1,0 +1,680 @@
+---
+published: false
+---
+
+### 1. CSS Syntax
+```css
+h1 {color:blue; font-size:12px;}
+```
+h1: selector, points to the HTML element
+color: property
+blue: value
+
+### 2. CSS Selector
+1. element selector
+2. id selector
+    ```css
+    #paral {color: red;}
+    ```
+3. class selector
+    ```css
+    .center {color: red;}
+    p.center {color: blue;}
+    ```
+4. universal selector
+    ```css
+    * {color: blue}
+    ```
+5. grouping selector
+    ```css
+    h1, h2, p {
+      text-align: center;
+      color: red;
+    }
+    ```
+
+### 3. How To Add CSS
+1. External
+2. Internal
+3. Inline
+    
+If multiple styles are defined for single element, styles are applied by following order.  
+1. Inline
+2. External and Internal(follows order they are defined)
+3. Browser default
+
+### 4. CSS Coments
+```css
+/*comments*/
+```
+### 5. CSS Colors
+- background-color
+- color
+- border
+
+Color is specified by
+- color name
+- HEX value
+- RGB value
+```html
+<h1 style="background-color:rgb(255, 148, 71);">Hello World</h1>
+<h1 style="background-color:rgb(255, 148, 71, 0.5);">Hello World</h1>
+<!--rgba-->
+<h1 style="color:#ff6347;">Hello World</h1>
+<h1 style="border:2px solid Tomato;">Hello World</h1>
+```
+
+### 6. CSS Backgrounds
+- background-color
+- opacity: transparancey
+    ```css
+    div {
+      background-color: green;
+      opacity: 0.3;
+    }
+    ```
+    Different with using rgba. rgba does not soften child elements(ex: texts)
+- background-image
+    ```css
+    body {
+      background-image: url("paper.gif");
+    }
+    ```
+- background-repeat
+    repeat-x / no-repeat / repeat-y
+- background-position
+    ex) right top
+- background-attachment
+    fixed(always displayed)/ scroll
+- backgorund(short hand property)
+    ```css
+    body {
+      background-color: #ffffff;
+      background-image: url("img_tree.png");
+      background-repeat: no-repeat;
+      background-position: right top;
+    }
+    body {
+      background: #ffffff url("img_tree.png") no-repeat right top;
+    }
+    /*both code makes same result*/
+    ```
+
+### 7. CSS Borders
+- border-style
+    dotted/ dashed/ solid/ double/ groove/ ridge/ inset/ outset/ none/ hidden
+    ```css
+    p.mix {border-style: dotted dashed solid double;}
+    ```
+- border-width
+    thin/ medium/ thick/ px/ cm
+- opacity
+- border-color
+    name/ HEX/ RGB/ RGBA/ HSL
+- border-(top/ right/ bottom/ left)-style
+    We can make same result using border-style, width, color.
+    - four values: clockwise
+    - three values: top, right and left, bottom order
+    - two values: top and bottom, right and bottom order
+    - one value: all border
+- border(short hand property)
+    ```css
+    p {
+      border: 5px solid red;
+    }
+    p {
+      border-left: 6px solid red;
+    }
+    ```
+- border-radius
+    Defines roundness of border.
+    ```css
+    p {
+      border: 2px solid red;
+      border-radius: 5px;
+    }
+    ```
+
+### 8. CSS Margins
+Defines space outside of borders.
+Use margin-(top/ right/ bottom/ left) or short hand method.
+Margins are defined by folling methods.
+- auto: browser calculates the margin -> centered
+- length: specifies margin in px, pt, cm,...
+- %: specifies a margin in % of the width of the containing element
+- inherit: specifies that margin properties are inherited from its parent element
+
+Top and bottom margins of elements are sometimes collapsed into a single margin that is equal to the largest of the two margins.  
+This result can be made deliberately by using negative values.
+
+### 9. CSS Padding
+Defines space between element's content and border.  
+Same usage with margin, except absense of auto and negative value.  
+Problem that may occur is, when using padding with width or height property, the actual size may differ with intended one, because actual size is decided by size + padding, not size.  
+This problem can be solved by using box-sizing property.  
+```css
+div {
+  width: 300px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+/*actual size is restricted to 300px*/
+```
+
+### 10. CSS Height, Width and Max-width
+1. Height, Width
+    Defines height and width of element.  
+    This does not include padding, borders, or margins.
+    auto/ length/ %/ initial/ inherit
+2. Max-width
+    Used to set the maximum width of an element.  
+    Prevents browser adds horizontal scrollbar.  
+
+### 11. CSS Outline
+Defines line between margin and border/edge
+- outline-style
+    dotted/ dashed/ solid/ double/ groove/ ridge/ inset/ outset/ none/ hidden
+- outline-color
+- outline-width
+- outline-offset: adds space between an outline and border/edge of elenet
+- outline(short hand method)
+
+### 12. CSS Text
+- color
+- text-align: center/ left/ right/ justify
+- text-align-last
+    defines how to align the last line
+    center/ left/ right/ justify
+- direction: rtl/ ltr
+- verical-align: baseline/ text-top/ text-bottom/ sub/ super
+- text decoration
+    1. text-decoration-line: overline/ line-through/ underline/ overline underline
+    2. text-decoration-color
+    3. text-decoration-style: solid/ double/ dotted/ dashed/ wavy
+    4. text-decoration-thickness
+    5. text-decoration: none for no line(link)
+- text-transform: uppercase/ lowercase/ capitalize
+- text spacing
+    1. text-indent
+    2. letter-spacing
+    3. line-height
+    4. word-spacing
+    5. white-space: unwrap/ normal/ pre
+- text-shadow
+    horizontal, vertical, blur, color
+    ```css
+    h1 {
+      color: white;
+      text-shadow: 2px 2px 4px #000000;
+    }
+    ```
+    
+### 13. CSS Fonts
+- font-family: hold several font names as a fallback system
+- font-size
+- Google Fonts
+    ```html
+    <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong">
+    <style>
+    h1.a {font-family: "Audiowide", sans-serif;}
+    h1.b {font-family: "Sofia", sans-serif;}
+    h1.c {font-family: "Trirong", serif;}
+    </style>
+    </head>
+    ```
+
+### 14. CSS Icons
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<i class="fas fa-cloud"></i>
+<i class="fas fa-heart"></i>
+<i class="fas fa-car"></i>
+<i class="fas fa-file"></i>
+<i class="fas fa-bars"></i>
+
+</body>
+</html>
+```
+
+### 15. CSS Links
+link, hover, visited, active
+Order must be followed: link, visited -> hover -> actve
+background-color, text-decoration,...
+
+### 16. CSS Lists
+- list-style-type: circle/ square/ upper-roman/ lower-alpha/ none/ url('image_source')
+- list-style-position: outside/ inside
+
+### 17. CSS Tables
+1. Borders
+    ```css
+    table, th, td {
+      border: 1px solid;
+    }
+    ```
+    To avoid double border, try this.
+    ```css
+    table {
+      border-collapse: collapse;
+    }
+    ```
+2. Size
+    ```css
+    table {
+      width: 100%;
+    }
+    th {
+      height: 70px;
+    }
+    ```
+3. Alignment
+    - text-align
+    - vertical-align
+
+4. Style
+    - padding
+    - border
+    - hover,...
+    - nth-child(even)
+5. Responsive
+    <div style="overflow-x: auto;">
+
+
+### 18. CSS Display
+Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.
+- Block-level Elelments
+    Starts on new line and takes up the full width available
+    ex) div, h1, p, form, header, footer, section
+    
+- Inline Elements
+    Does not start on new line and only takes up as much width as necessary
+    ex) span, a, img
+- display: block/ inline/ inline-block/ flex/ none
+    none is different with "visibility: hidden", in whether it takes space.
+
+### 19. CSS Max-Width
+Using max-width property instead of width, browser does not add horizontal scrollbar.
+
+### 20. CSS Position
+1. static
+    Element positions where it should have been.
+    Top, Bottom,... properties are ignored.
+2. relative
+    Element positions relative to where it should have been.
+    Top, Bottom,... properties are used.
+3. absolute
+    Element positions relative to the nearest positioned(not static) ancestor. The recursion continues ubtil it meets body element.
+4. fixed
+    Element positions relative to th viewport(window), which means it always stays in the same place even if the page is scrolled.
+5. sticky
+    It is positions relative until a given offset position is met in the viewport like position: fixed
+
+### 21. CSS z-index
+Specifies the stack order of an element.
+z-index property only works on positioned elements an flex items.
+
+### 22. CSS Overflow
+- visible: default, renders outside the element's box
+- hidden: overflowed contents are invisible
+- scroll: scrollbar is added for the overflowed contents
+- auto: add scrollbars only when necesarry
+```css
+div {
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: scroll; /* Add vertical scrollbar */
+}
+```
+
+### 23. CSS float and clear
+1. float
+    Used for positioning and formatting content, let an image float left to the text in a container.
+    left/ right/ none/ inherit
+2. clear
+    Used when we want element which is next to float element to move below.
+    left/ right/ both/ none/ inherit
+    When floated element is taller than the containing element, it will overflow -> use clearfix hack.
+    ```css
+    .clearfix {
+      overflow: auto;
+    }
+    ```
+    But using pseudo-element is better.
+3. examples
+    ```css
+    * {
+      box-sizing: border-box;
+    }
+    .box {
+      float: left;
+      width: 33.33%;
+      padding: 50px; /* if you want space between the images */
+    }
+    ```
+    To fix heights of boxes, it is best to use flex-box.
+    ```css
+    .flex-container {
+      display: flex;
+      flex-wrap: nowrap;
+      background-color: DodgerBlue;
+    }
+    
+    .flex-container .box {
+      background-color: #f1f1f1;
+      width: 50%;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+    ```
+    To make navigation bar, you can use "float: left" or "display: inline-block".
+
+### 24. CSS Horizontal & Vetical Align
+1. center horizontally
+    - box element: "margin: auto"
+    - text: "text-align: center"
+    - image: use "display: box" and "margin: auto"
+2. left and right
+    - position: absolute
+    - float: left(right)
+3. center vertically
+    - padding
+    - line-height
+        ```css
+        .center {
+          line-height: 200px;
+          height: 200px;
+          border: 3px solid green;
+          text-align: center;
+        }
+        
+        /* If the text has multiple lines, add the following: */
+        .center p {
+          line-height: 1.5;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        ```
+    - flex box
+        ```css
+        .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 200px;
+          border: 3px solid green;
+        }
+        ```
+
+### 25. CSS Combinators
+1. Descendant selector: (space)
+2. child selector: >
+3. adjacent sibling selector: +
+4. general sibling selector: ~
+
+### 26. CSS Pseudo-classes
+- Syntax
+    ```css
+    selector:pseudo-class {
+        property: value
+    }
+    ```
+- tooltop
+    ```css
+    p {
+      display: none;
+      background-color: yellow;
+      padding: 20px;
+    }
+    
+    div:hover p {
+      display: block;
+    }
+    ```
+- dynamic pseudo-classes
+    - :link
+    - :visited
+    - :hover
+    - :active
+    - :focus
+    - :target
+    - :in-range
+    - :out-of-range
+    - :valid
+    - :invalid
+- state pseudo-classes
+    - :read-only
+    - :read-write
+    - :required
+    - :optional
+    - :checked
+    - :enabled
+    - :disabled
+- structural pseudo-classes
+    - :first-child(last)
+    - :nth-child
+    - :first-of-type(last)
+    - :nth-of-type
+    - :only-of-type
+    - :only-child
+- etc
+    - :not
+    - :lang
+        ```html
+        <html>
+        <head>
+        <style>
+        q:lang(no) {
+          quotes: "~" "~";
+        }
+        </style>
+        </head>
+        <body>
+        <p>Some text <q lang="no">A quote in a paragraph</q> Some text.</p>
+        </body>
+        </html>
+        ```
+
+### 27. CSS Pseudo-elements
+Used to style specified parts of an element.
+- ::first-line
+    can only applied to block-level elements
+- ::first-letter
+- ::before
+    ```css
+    h1::before {
+      content: url(smiley.gif);
+    }
+    ```
+- ::after
+- ::marker
+    selects the markers of list items.
+- ::selection
+    ::selection {
+      color: red;
+      background: yellow;
+    }
+    matches the portion of an element that is selected by a user.
+
+### 27. CSS Navigation Bar
+1. Vertical
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    body {
+      margin: 0;
+    }
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 25%;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+    
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    
+    li a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    
+    <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+      <h2>Fixed Full-height Side Nav</h2>
+
+    </div>
+    
+    </body>
+    </html>
+    ```
+2. Horizontal
+    ```html
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    body {margin:0;}
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    li {
+      float: left;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+    
+    .active {
+      background-color: #04AA6D;
+    }
+    </style>
+    </head>
+    <body>
+    
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    
+    <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
+      <h1>Fixed Top Navigation Bar</h1>
+      <h2>Scroll this page to see the effect</h2>
+      <h2>The navigation bar will stay at the top of the page while scrolling</h2>
+    
+      <p>Some text some text some text some text..</p>
+      <p>Some text some text some text some text..</p>
+    
+    </div>
+    
+    </body>
+    </html>
+    ```
+
+### 28. CSS Dropdowns
+```html
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+</style>
+
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>
+```
+
+
+
+
+
+
+
+
