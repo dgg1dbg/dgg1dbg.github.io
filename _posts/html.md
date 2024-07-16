@@ -1,5 +1,8 @@
 ---
-published: false
+title: 'html 공부 정리'
+date: 2024-07-16 12:00:00 +0900
+categories: ['Code', 'Web', 'Frontend']
+tags: [html, frontend]
 ---
 
 # html 공부
@@ -19,12 +22,12 @@ published: false
 ~~~ 
 
 ### 2. Major Elements
-- heading: <h1> ~ <h2>
-- paragraph: <p> or <pre>
-- link: <a href="link">
-- br: <br>
-- hr: <hr>
-- formatting elements: <b>, <strong> ...
+- heading: \<h1> ~ \<h2>
+- paragraph: \<p> or \<pre>
+- link: \<a href="link">
+- br: \<br>
+- hr: \<hr>
+- formatting elements: \<b>, \<strong> ...
 - form
 
 ### 3. Attributes
@@ -40,7 +43,7 @@ Headings help search engines index file structure.
 
 ### 5. Paragraphs
 With Html, you cannot change the display by adding extra spaces or extra lines. Browsers automatically removes extra spaces. Line break is decided by browsers size.  
-Solution for this is using <br> or <hr> or <pre> tag.  
+Solution for this is using \<br> or \<hr> or \<pre> tag.  
 
 ### 6. Html Styles
 ~~~ html
@@ -59,23 +62,23 @@ major properties are below
 - float
 
 ### 7. HTML Formatting Elements
-- bold: <b>
-- important: <strong>
-- italic: <i>
-- emphasized: <em>
-- marked: <mark>
-- smaller: <small>
-- deleted: <del>
-- inserted: <ins>
-- subscript: <sub>
-- superscript: <sup>
+- bold: \<b>
+- important: \<strong>
+- italic: \<i>
+- emphasized: \<em>
+- marked: \<mark>
+- smaller: \<small>
+- deleted: \<del>
+- inserted: \<ins>
+- subscript: \<sub>
+- superscript: \<sup>
 
 ### 8. HTML Quotation and Citation Elements
-- block quote: <blockquote> adds new block of quote
-- short quote: <q> adds quotation mark
-- abbreviations: <abbr> adds dotted line. use this with title attribute
-- contact info: <address> defines contact info with italic
-- work title: <cite> defines title of work with italic
+- block quote: \<blockquote> adds new block of quote
+- short quote: \<q> adds quotation mark
+- abbreviations: \<abbr> adds dotted line. use this with title attribute
+- contact info: \<address> defines contact info with italic
+- work title: \<cite> defines title of work with italic
 
 ### 9. HTMl Comment
 ~~~ html
@@ -86,24 +89,24 @@ major properties are below
 1. Inline
     By using style attribute in elements.
 2. Internal
-   ~~~ html
-  <!DOCTYPE html>
-  <html>
-  <head>
-  <style>
-  body {background-color: powderblue;}
-  h1   {color: blue;}
-  p    {color: red;}
-  </style>
-  </head>
-  <body>
-
-  <h1>This is a heading</h1>
-  <p>This is a paragraph.</p>
-
-  </body>
-  </html>
-   ~~~ 
+    ~~~ html
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    body {background-color: powderblue;}
+    h1   {color: blue;}
+    p    {color: red;}
+    </style>
+    </head>
+    <body>
+    
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+    
+    </body>
+    </html>
+    ~~~ 
 3. External
     ~~~ html
     <!DOCTYPE html>
@@ -178,33 +181,33 @@ major properties are below
     Use Picture Element when your image might be too big for some devices. Also, you can use this to give various formats of same image to browser.  
     
 ### 13. Favicon
-    ~~~ html
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    ~~~ 
+~~~ html
+<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+~~~ 
     
 ### 14. HTML Table
-    ~~~ html
-    <table>
-      <tr>
-        <th>Company</th>
-        <th>Contact</th>
-        <th>Country</th>
-      </tr>
-      <tr>
-        <td>Alfreds Futterkiste</td>
-        <td>Maria Anders</td>
-        <td>Germany</td>
-      </tr>
-      <tr>
-        <td>Centro comercial Moctezuma</td>
-        <td>Francisco Chang</td>
-        <td>Mexico</td>
-      </tr>
-    </table>
-    ~~~ 
+~~~ html
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
+~~~ 
 
 ### 15. HTML Lists
-Unordered List
+- Unordered List
 ~~~ html
 <ul>
   <li>Coffee</li>
@@ -212,7 +215,7 @@ Unordered List
   <li>Milk</li>
 </ul>
 ~~~ 
-Ordered List
+- Ordered List
 ~~~ html
 <ol>
   <li>Coffee</li>
@@ -223,10 +226,10 @@ Ordered List
 
 ### 16. HTML Block and Inline 
 1. Block-level Elements
-    - <div>: divide area
-    - <p>: add paragraph -> cannot include block elements
+    - \<div>: divide area
+    - \<p>: add paragraph -> cannot include block elements
 2. Inline Elements
-    - <span>: inline container
+    - \<span>: inline container
     
 ### 17. HTML Class
 ~~~ html
@@ -284,7 +287,7 @@ Difference between class is its uniqueness.
 iframe can be targetted by hyperlink.  
 
 ### 20. HTML Forms
-- <form> element is used to create HTML form for user input.
+- \<form> element is used to create HTML form for user input.
     1. action attribute: defines the action to be performed when the form is submitted.
     2. target attribute: defines where to display the response after submitting the form
         - _self: current tab
@@ -299,11 +302,11 @@ iframe can be targetted by hyperlink.
     5. novalidate attribute: when present, means not to validate submitted data.
 
 ### 21. HTML Form elements
-<form> element can contain one or more of following form elements.  
-1. <input>
-2. <label>
-3. <select>  
-    The <select> element defines a drop-down list:
+\<form> element can contain one or more of following form elements.  
+1. \<input>
+2. \<label>
+3. \<select>  
+    The \<select> element defines a drop-down list:
     ~~~ html
     <label for="cars">Choose a car:</label>
     <select id="cars" name="cars" size="4" multiple>
@@ -314,19 +317,19 @@ iframe can be targetted by hyperlink.
     </select>
     ~~~ 
     Attribute size defines visible values, and multiple defines whether multiple selection is possible.
-4. <textarea>
-    The <textarea> element defines a multi-line input field (a text area):
+4. \<textarea>
+    The \<textarea> element defines a multi-line input field (a text area):
     ~~~ html
     <textarea name="message" rows="10" cols="30">
     The cat was playing in the garden.
     </textarea>
     ~~~ 
-5. <button>
-    The <button> element defines a clickable button:
+5. \<button>
+    The \<button> element defines a clickable button:
     ~~~ html
     <button type="button" onclick="alert('Hello World!')">Click Me!</button>
     ~~~ 
-6. <fieldset> and <legend>
+6. \<fieldset> and <legend>
     makes group, and add title.
     ~~~ html    
     <form action="/action_page.php">
@@ -340,8 +343,8 @@ iframe can be targetted by hyperlink.
       </fieldset>
     </form>
     ~~~ 
-7. <datalist>
-    Specifies a list of pre-defined options for <input> element>
+7. \<datalist>
+    Specifies a list of pre-defined options for \<input> element
     ~~~ html
     <form action="/action_page.php">
       <input list="browsers">
@@ -355,9 +358,9 @@ iframe can be targetted by hyperlink.
     </form>
     ~~~ 
     list attribute must refer to id of datalist.
-8. <output>
-9. <option>
-10. <optgroup>
+8. \<output>
+9. \<option>
+10. \<optgroup>
 
 ### 22. HTML Input Types
 1. text:single line text input
@@ -376,7 +379,7 @@ iframe can be targetted by hyperlink.
         <label for="html">HTML</label><br>
     </form>
     ~~~ 
-    <input>'s attribute name should be same and always needs value attribute.
+    \<input>'s attribute name should be same and always needs value attribute.
 3. checkbox: select zero or more of many
     ~~~ html
     <form>
@@ -388,7 +391,7 @@ iframe can be targetted by hyperlink.
       <label for="vehicle3"> I have a boat</label>
     </form>
     ~~~ 
-    <input> always needs value attribute.  
+    \<input> always needs value attribute.  
 4. submit: submit the form
     ~~~ html
     <form action="/action_page.php">
