@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="en" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.3.1" /><meta property="og:title" content="html 공부 정리" /><meta property="og:locale" content="en" /><meta name="description" content="html 공부" /><meta property="og:description" content="html 공부" /><link rel="canonical" href="https://dgg1dbg.github.io/posts/html-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/" /><meta property="og:url" content="https://dgg1dbg.github.io/posts/html-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/" /><meta property="og:site_name" content="Jeong Min’s blog" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2024-07-16T03:00:00+00:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="html 공부 정리" /><meta name="twitter:site" content="@x" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-17T05:18:47+00:00","datePublished":"2024-07-16T03:00:00+00:00","description":"html 공부","headline":"html 공부 정리","mainEntityOfPage":{"@type":"WebPage","@id":"https://dgg1dbg.github.io/posts/html-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/"},"url":"https://dgg1dbg.github.io/posts/html-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/"}</script><title>html 공부 정리 | Jeong Min's blog</title><link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Jeong Min's blog"><meta name="application-name" content="Jeong Min's blog"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="use-credentials"><link rel="dns-prefetch" href="https://www.google-analytics.com"><link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous"><link rel="dns-prefetch" href="https://www.googletagmanager.com"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/" class="mx-auto"> <img src="/assets/img/favicons/android-chrome-512x512.png" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title"> <a href="/">Jeong Min's blog</a></div><div class="site-subtitle font-italic">Coding, Math, Security</div></div><ul class="w-100"><li class="nav-item"> <a href="/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a><li class="nav-item"> <a href="/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/dgg1dbg" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/x" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['jeongmin.lihi','gmail.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/"> Home </a> </span> <span>html 공부 정리</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>html 공부 정리</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1721098800" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Jul 16, 2024 </em> </span> <span> Updated <em class="" data-ts="1721193527" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Jul 17, 2024 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://twitter.com/username">Jeong Min Lee</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="1463 words"> <em>8 min</em> read</span></div></div></div><div class="post-content"><h1 id="html-공부">html 공부</h1><h3 id="1-basic-structure"><span class="mr-2">1. Basic Structure</span><a href="#1-basic-structure" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>title<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>heading<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>paragraph<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></table></code></div></div><h3 id="2-major-elements"><span class="mr-2">2. Major Elements</span><a href="#2-major-elements" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>heading: &lt;h1&gt; ~ &lt;h2&gt;<li>paragraph: &lt;p&gt; or &lt;pre&gt;<li>link: &lt;a href=”link”&gt;<li>br: &lt;br&gt;<li>hr: &lt;hr&gt;<li>formatting elements: &lt;b&gt;, &lt;strong&gt; …<li>form</ul><h3 id="3-attributes"><span class="mr-2">3. Attributes</span><a href="#3-attributes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>lang: helps search engine &lt;- html’s attribute<li>title: add tooltip to elements<li>style: set styles of element<li>id<li>class</ul><h3 id="4-headings"><span class="mr-2">4. Headings</span><a href="#4-headings" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>Headings help search engines index file structure.<br /> -&gt; needs careful usage</p><h3 id="5-paragraphs"><span class="mr-2">5. Paragraphs</span><a href="#5-paragraphs" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>With Html, you cannot change the display by adding extra spaces or extra lines. Browsers automatically removes extra spaces. Line break is decided by browsers size.<br /> Solution for this is using &lt;br&gt; or &lt;hr&gt; or &lt;pre&gt; tag.</p><h3 id="6-html-styles"><span class="mr-2">6. Html Styles</span><a href="#6-html-styles" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="nt">&lt;tagname</span> <span class="na">style=</span><span class="s">"property:value;"</span><span class="nt">&gt;</span>
+</pre></table></code></div></div><p>property is CSS property, value is CSS value.<br /> major properties are below</p><ul><li>background-color<li>color<li>font-family<li>font-size<li>text-align<li>border<li>padding<li>margin<li>float</ul><h3 id="7-html-formatting-elements"><span class="mr-2">7. HTML Formatting Elements</span><a href="#7-html-formatting-elements" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>bold: &lt;b&gt;<li>important: &lt;strong&gt;<li>italic: &lt;i&gt;<li>emphasized: &lt;em&gt;<li>marked: &lt;mark&gt;<li>smaller: &lt;small&gt;<li>deleted: &lt;del&gt;<li>inserted: &lt;ins&gt;<li>subscript: &lt;sub&gt;<li>superscript: &lt;sup&gt;</ul><h3 id="8-html-quotation-and-citation-elements"><span class="mr-2">8. HTML Quotation and Citation Elements</span><a href="#8-html-quotation-and-citation-elements" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>block quote: &lt;blockquote&gt; adds new block of quote<li>short quote: &lt;q&gt; adds quotation mark<li>abbreviations: &lt;abbr&gt; adds dotted line. use this with title attribute<li>contact info: &lt;address&gt; defines contact info with italic<li>work title: &lt;cite&gt; defines title of work with italic</ul><h3 id="9-html-comment"><span class="mr-2">9. HTMl Comment</span><a href="#9-html-comment" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="c">&lt;!-- Write yout comments --&gt;</span>
+</pre></table></code></div></div><h3 id="10-html-styles--css"><span class="mr-2">10. HTML Styles- CSS</span><a href="#10-html-styles--css" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ol><li>Inline By using style attribute in elements.<li>Internal<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre><td class="rouge-code"><pre> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+ <span class="nt">&lt;head&gt;</span>
+ <span class="nt">&lt;style&gt;</span>
+ <span class="nt">body</span> <span class="p">{</span><span class="nl">background-color</span><span class="p">:</span> <span class="no">powderblue</span><span class="p">;}</span>
+ <span class="nt">h1</span>   <span class="p">{</span><span class="nl">color</span><span class="p">:</span> <span class="no">blue</span><span class="p">;}</span>
+ <span class="nt">p</span>    <span class="p">{</span><span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;}</span>
+ <span class="nt">&lt;/style&gt;</span>
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;body&gt;</span>
+    
+ <span class="nt">&lt;h1&gt;</span>This is a heading<span class="nt">&lt;/h1&gt;</span>
+ <span class="nt">&lt;p&gt;</span>This is a paragraph.<span class="nt">&lt;/p&gt;</span>
+    
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+</pre></table></code></div></div><li>External<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre><td class="rouge-code"><pre> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+ <span class="nt">&lt;head&gt;</span>
+   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"styles.css"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;/head&gt;</span>
+ <span class="nt">&lt;body&gt;</span>
+    
+ <span class="nt">&lt;h1&gt;</span>This is a heading<span class="nt">&lt;/h1&gt;</span>
+ <span class="nt">&lt;p&gt;</span>This is a paragraph.<span class="nt">&lt;/p&gt;</span>
+    
+ <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+</pre></table></code></div></div></ol><h3 id="11-html-links"><span class="mr-2">11. HTML Links</span><a href="#11-html-links" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>Target Attribute<ol><li>_self: current tab<li>_blank: new tab<li>_parent: parent frame<li>_top: full body of the window</ol><li>Can use image as a link<li>Link to an email address<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mailto:someone@example.com"</span><span class="nt">&gt;</span>Send email<span class="nt">&lt;/a&gt;</span>
+</pre></table></code></div></div><li>Add title to link<li>Different colors: define style using internal CSS style<ol><li>a:link: default<li>a:visited: visited<li>a:hover: hovered<li>a:active: pressing</ol><li>Link other elements using id<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre>  <span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"C4"</span><span class="nt">&gt;</span>Chapter 4<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#C4"</span><span class="nt">&gt;</span>Jump to Chapter 4<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"html_demo.html#C4"</span><span class="nt">&gt;</span>Jump to Chapter 4<span class="nt">&lt;/a&gt;</span>
+</pre></table></code></div></div></ul><h3 id="12-html-images"><span class="mr-2">12. HTML Images</span><a href="#12-html-images" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ol><li>Images<ul><li>Alows animated images by using gif format<li>Use float CSS property to merge image with texts</ul><li>Image Maps<li>Background Image<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"background-image: url('img_girl.jpg');"</span><span class="nt">&gt;</span>
+</pre></table></code></div></div><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;style&gt;</span>
+ <span class="nt">body</span> <span class="p">{</span><span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('img_girl.jpg')</span><span class="p">;}</span>
+ <span class="nt">background-repeat</span><span class="o">:</span> <span class="nt">no-repeat</span><span class="o">;</span>
+ <span class="nt">&lt;/style&gt;</span>
+</pre></table></code></div></div><p>By using <em>background-repeat</em> property, you can avoid repeating images.</p><li>&lt;picture&gt; Element<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;picture&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">"(min-width: 650px)"</span> <span class="na">srcset=</span><span class="s">"img_food.jpg"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">media=</span><span class="s">"(min-width: 465px)"</span> <span class="na">srcset=</span><span class="s">"img_car.jpg"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img_girl.jpg"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;/picture&gt;</span>
+</pre></table></code></div></div><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;picture&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"img_avatar.png"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"img_girl.jpg"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img_beatles.gif"</span> <span class="na">alt=</span><span class="s">"Beatles"</span> <span class="na">style=</span><span class="s">"width:auto;"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;/picture&gt;</span>
+</pre></table></code></div></div><p>Use Picture Element when your image might be too big for some devices. Also, you can use this to give various formats of same image to browser.</p></ol><h3 id="13-favicon"><span class="mr-2">13. Favicon</span><a href="#13-favicon" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"icon"</span> <span class="na">type=</span><span class="s">"image/x-icon"</span> <span class="na">href=</span><span class="s">"/images/favicon.ico"</span><span class="nt">&gt;</span>
+</pre></table></code></div></div><h3 id="14-html-table"><span class="mr-2">14. HTML Table</span><a href="#14-html-table" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Company<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Contact<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Country<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Alfreds Futterkiste<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Maria Anders<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Germany<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Centro comercial Moctezuma<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Francisco Chang<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Mexico<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></table></code></div></div><h3 id="15-html-lists"><span class="mr-2">15. HTML Lists</span><a href="#15-html-lists" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>Unordered List<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Coffee<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Tea<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></table></code></div></div><li>Ordered List<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre><td class="rouge-code"><pre><span class="nt">&lt;ol&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Coffee<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Tea<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Milk<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+</pre></table></code></div></div></ul><h3 id="16-html-block-and-inline"><span class="mr-2">16. HTML Block and Inline</span><a href="#16-html-block-and-inline" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ol><li>Block-level Elements<ul><li>&lt;div&gt;: divide area<li>&lt;p&gt;: add paragraph -&gt; cannot include block elements</ul><li>Inline Elements<ul><li>&lt;span&gt;: inline container</ul></ol><h3 id="17-html-class"><span class="mr-2">17. HTML Class</span><a href="#17-html-class" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+</pre><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+<span class="nc">.note</span> <span class="p">{</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="m">120%</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;h1&gt;</span>My <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"note"</span><span class="nt">&gt;</span>Important<span class="nt">&lt;/span&gt;</span> Heading<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;p&gt;</span>This is some <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"note"</span><span class="nt">&gt;</span>important<span class="nt">&lt;/span&gt;</span> text.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></table></code></div></div><p>Used to access elements from style sheet or javascript.<br /> One element can have multiple classes and different types of elements can have same class.</p><h3 id="18-html-id"><span class="mr-2">18. Html ID</span><a href="#18-html-id" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>id attribute is used to specify a unique id for an element.<br /> Difference between class is its uniqueness.</p><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre><td class="rouge-code"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;style&gt;</span>
+<span class="nf">#myHeader</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="no">lightblue</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">40px</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+<span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"myHeader"</span><span class="nt">&gt;</span>My Header<span class="nt">&lt;/h1&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></table></code></div></div><h3 id="19-html-iframes"><span class="mr-2">19. HTML iframes</span><a href="#19-html-iframes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre><span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"demo_iframe.htm"</span> <span class="na">name=</span><span class="s">"iframe_a"</span> <span class="na">title=</span><span class="s">"Iframe Example"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://www.w3schools.com"</span> <span class="na">target=</span><span class="s">"iframe_a"</span><span class="nt">&gt;</span>W3Schools.com<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+</pre></table></code></div></div><p>iframe can be targetted by hyperlink.</p><h3 id="20-html-forms"><span class="mr-2">20. HTML Forms</span><a href="#20-html-forms" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>&lt;form&gt; element is used to create HTML form for user input.<ol><li>action attribute: defines the action to be performed when the form is submitted.<li>target attribute: defines where to display the response after submitting the form<ul><li>_self: current tab<li>_blank: new tab<li>_parent: parent frame<li>_top: full body of window<li><em>framename</em>: iframe</ul><li>method attribute: specifies http method to be used when submitting the data<ul><li>get<li>post</ul><li>autocomplete attribute: specifies whether to auto complete the form with user’s past records.<li>novalidate attribute: when present, means not to validate submitted data.</ol></ul><h3 id="21-html-form-elements"><span class="mr-2">21. HTML Form elements</span><a href="#21-html-form-elements" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>&lt;form&gt; element can contain one or more of following form elements.</p><ol><li>&lt;input&gt;<li>&lt;label&gt;<li>&lt;select&gt;<br /> The &lt;select&gt; element defines a drop-down list:<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"cars"</span><span class="nt">&gt;</span>Choose a car:<span class="nt">&lt;/label&gt;</span>
+ <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">"cars"</span> <span class="na">name=</span><span class="s">"cars"</span> <span class="na">size=</span><span class="s">"4"</span> <span class="na">multiple</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"volvo"</span> <span class="na">selected</span><span class="nt">&gt;</span>Volvo<span class="nt">&lt;/option&gt;</span>
+   <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"saab"</span><span class="nt">&gt;</span>Saab<span class="nt">&lt;/option&gt;</span>
+   <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"fiat"</span><span class="nt">&gt;</span>Fiat<span class="nt">&lt;/option&gt;</span>
+   <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"audi"</span><span class="nt">&gt;</span>Audi<span class="nt">&lt;/option&gt;</span>
+ <span class="nt">&lt;/select&gt;</span>
+</pre></table></code></div></div><p>Attribute size defines visible values, and multiple defines whether multiple selection is possible.</p><li>&lt;textarea&gt; The &lt;textarea&gt; element defines a multi-line input field (a text area):<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"message"</span> <span class="na">rows=</span><span class="s">"10"</span> <span class="na">cols=</span><span class="s">"30"</span><span class="nt">&gt;</span>
+ The cat was playing in the garden.
+ <span class="nt">&lt;/textarea&gt;</span>
+</pre></table></code></div></div><li>&lt;button&gt; The &lt;button&gt; element defines a clickable button:<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">onclick=</span><span class="s">"alert('Hello World!')"</span><span class="nt">&gt;</span>Click Me!<span class="nt">&lt;/button&gt;</span>
+</pre></table></code></div></div><li>&lt;fieldset&gt; and &lt;legend&gt; makes group, and add title.<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/action_page.php"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;fieldset&gt;</span>
+     <span class="nt">&lt;legend&gt;</span>Personalia:<span class="nt">&lt;/legend&gt;</span>
+     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fname"</span><span class="nt">&gt;</span>First name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"fname"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="na">value=</span><span class="s">"John"</span><span class="nt">&gt;&lt;br&gt;</span>
+     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"lname"</span><span class="nt">&gt;</span>Last name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"lname"</span> <span class="na">name=</span><span class="s">"lname"</span> <span class="na">value=</span><span class="s">"Doe"</span><span class="nt">&gt;&lt;br&gt;&lt;br&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/fieldset&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><li>&lt;datalist&gt; Specifies a list of pre-defined options for &lt;input&gt; element<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/action_page.php"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">list=</span><span class="s">"browsers"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;datalist</span> <span class="na">id=</span><span class="s">"browsers"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Internet Explorer"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Firefox"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Chrome"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Opera"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">"Safari"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/datalist&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><p>list attribute must refer to id of datalist.</p><li>&lt;output&gt;<li>&lt;option&gt;<li>&lt;optgroup&gt;</ol><h3 id="22-html-input-types"><span class="mr-2">22. HTML Input Types</span><a href="#22-html-input-types" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ol><li>text:single line text input<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form&gt;</span>
+     <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fname"</span><span class="nt">&gt;</span>First Name: <span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"fname"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="na">value=</span><span class="s">First</span> <span class="na">Name</span><span class="nt">&gt;&lt;br&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><li>radio: select one of many<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"css"</span> <span class="na">name=</span><span class="s">"survey"</span> <span class="na">value=</span><span class="s">"CSS&gt;
+     &lt;label for="</span><span class="na">css</span><span class="err">"</span><span class="nt">&gt;</span>CSS<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">id=</span><span class="s">"html"</span> <span class="na">name=</span><span class="s">"survey"</span> <span class="na">value=</span><span class="s">"HTML&gt;
+     &lt;label for="</span><span class="na">html</span><span class="err">"</span><span class="nt">&gt;</span>HTML<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><p>&lt;input&gt;’s attribute name should be same and always needs value attribute.</p><li>checkbox: select zero or more of many<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"vehicle1"</span> <span class="na">name=</span><span class="s">"vehicle1"</span> <span class="na">value=</span><span class="s">"Bike"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"vehicle1"</span><span class="nt">&gt;</span> I have a bike<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"vehicle2"</span> <span class="na">name=</span><span class="s">"vehicle2"</span> <span class="na">value=</span><span class="s">"Car"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"vehicle2"</span><span class="nt">&gt;</span> I have a car<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">id=</span><span class="s">"vehicle3"</span> <span class="na">name=</span><span class="s">"vehicle3"</span> <span class="na">value=</span><span class="s">"Boat"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"vehicle3"</span><span class="nt">&gt;</span> I have a boat<span class="nt">&lt;/label&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><p>&lt;input&gt; always needs value attribute.</p><li>submit: submit the form<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/action_page.php"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fname"</span><span class="nt">&gt;</span>First name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"fname"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="na">value=</span><span class="s">"John"</span><span class="nt">&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"lname"</span><span class="nt">&gt;</span>Last name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"lname"</span> <span class="na">name=</span><span class="s">"lname"</span> <span class="na">value=</span><span class="s">"Doe"</span><span class="nt">&gt;&lt;br&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><p>Defines a button for submitting the form data to a form-handler.</p><li>button: clickable button<li>password: defines password field<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"username"</span><span class="nt">&gt;</span>Username:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"username"</span> <span class="na">name=</span><span class="s">"username"</span><span class="nt">&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"pwd"</span><span class="nt">&gt;</span>Password:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"password"</span> <span class="na">id=</span><span class="s">"pwd"</span> <span class="na">name=</span><span class="s">"pwd"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><p>characters in the field gets masked.</p><li>reset: reset all form values to their default values<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/action_page.php"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fname"</span><span class="nt">&gt;</span>First name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"fname"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="na">value=</span><span class="s">"John"</span><span class="nt">&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"lname"</span><span class="nt">&gt;</span>Last name:<span class="nt">&lt;/label&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"lname"</span> <span class="na">name=</span><span class="s">"lname"</span> <span class="na">value=</span><span class="s">"Doe"</span><span class="nt">&gt;&lt;br&gt;&lt;br&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"reset"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><li>button<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">onclick=</span><span class="s">"alert('Hello World!')"</span> <span class="na">value=</span><span class="s">"Click Me!"</span><span class="nt">&gt;</span>
+</pre></table></code></div></div><li>color: gets input of a color<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre> <span class="nt">&lt;form&gt;</span>
+   <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"favcolor"</span><span class="nt">&gt;</span>Select your favorite color:<span class="nt">&lt;/label&gt;</span>
+   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"color"</span> <span class="na">id=</span><span class="s">"favcolor"</span> <span class="na">name=</span><span class="s">"favcolor"</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><li>date<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"birthday"</span><span class="nt">&gt;</span>Birthday:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"date"</span> <span class="na">id=</span><span class="s">"birthday"</span> <span class="na">name=</span><span class="s">"birthday"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><li>datetime-local includes time.<li>email<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"email"</span><span class="nt">&gt;</span>Enter your email:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">name=</span><span class="s">"email"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><p>Some browsers automatically validate the input, and some smartphones add .com key to its keyboard.</p><li>image: defines an image as a submit button<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre><td class="rouge-code"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"image"</span> <span class="na">src=</span><span class="s">"img_submit.gif"</span> <span class="na">alt=</span><span class="s">"Submit"</span> <span class="na">width=</span><span class="s">"48"</span> <span class="na">height=</span><span class="s">"48"</span><span class="nt">&gt;</span>
+</pre></table></code></div></div><li>file<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre><td class="rouge-code"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"myfile"</span><span class="nt">&gt;</span>Select a file:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"file"</span> <span class="na">id=</span><span class="s">"myfile"</span> <span class="na">name=</span><span class="s">"myfile"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><li>hidden: defines hidden input file<div class="language-html highlighter-rouge"><div class="code-header"> <span data-label-text="HTML"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="nt">&lt;form&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"fname"</span><span class="nt">&gt;</span>First name:<span class="nt">&lt;/label&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"fname"</span> <span class="na">name=</span><span class="s">"fname"</span><span class="nt">&gt;&lt;br&gt;&lt;br&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">id=</span><span class="s">"custId"</span> <span class="na">name=</span><span class="s">"custId"</span> <span class="na">value=</span><span class="s">"3487"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></table></code></div></div><li>number<li>range<li>search: behaves like a regular text field<li>tel: telephone number<li>time<li>url</ol><h3 id="23-html-input-attributes"><span class="mr-2">23. HTML Input Attributes</span><a href="#23-html-input-attributes" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ol><li>value: initial value<li>readonly<li>disabled<li>size: width of a input field<li>maxlength<li>min, max<li>multiple: allow user to select multiple files<li>pattern<li>placeholder: specifies hint value<li>required<li>step<li>autofocus<li>list<li>autocomplete</ol></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/categories/code/'>Code</a>, <a href='/categories/web/'>Web</a>, <a href='/categories/frontend/'>Frontend</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/tags/html/" class="post-tag no-text-decoration" >html</a> <a href="/tags/frontend/" class="post-tag no-text-decoration" >frontend</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=html 공부 정리 - Jeong Min's blog&url=https%3A%2F%2Fdgg1dbg.github.io%2Fposts%2Fhtml-%25EA%25B3%25B5%25EB%25B6%2580-%25EC%25A0%2595%25EB%25A6%25AC%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=html 공부 정리 - Jeong Min's blog&u=https%3A%2F%2Fdgg1dbg.github.io%2Fposts%2Fhtml-%25EA%25B3%25B5%25EB%25B6%2580-%25EC%25A0%2595%25EB%25A6%25AC%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https%3A%2F%2Fdgg1dbg.github.io%2Fposts%2Fhtml-%25EA%25B3%25B5%25EB%25B6%2580-%25EC%25A0%2595%25EB%25A6%25AC%2F&text=html 공부 정리 - Jeong Min's blog" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/posts/WebRTC-%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC/">WebRTC 내용 정리</a><li><a href="/posts/Syncthing-Server/">라즈베리 파이로 Syncthing 서버 만들기</a><li><a href="/posts/%EB%8F%84%EB%8D%95%EC%9D%98-%EA%B3%84%EB%B3%B4-%EC%9A%94%EC%95%BD%EA%B3%BC-%ED%95%B4%EC%84%9D/">도덕의 계보 요약과 해석</a><li><a href="/posts/DPDK-%EC%82%AC%EC%9A%A9%EA%B8%B0(1)/">DPDK 사용기(1)</a><li><a href="/posts/html-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/">html 공부 정리</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/book-review/">Book Review</a> <a class="post-tag" href="/tags/python/">Python</a> <a class="post-tag" href="/tags/frontend/">frontend</a> <a class="post-tag" href="/tags/dpdk/">DPDK</a> <a class="post-tag" href="/tags/hft/">HFT</a> <a class="post-tag" href="/tags/math/">Math</a> <a class="post-tag" href="/tags/network/">Network</a> <a class="post-tag" href="/tags/number-theory/">Number Theory</a> <a class="post-tag" href="/tags/ai/">AI</a> <a class="post-tag" href="/tags/css/">css</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4 mt-5"><div id="related-posts" class="mb-2 mb-sm-4"><h3 class="pt-2 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/posts/css-%EA%B3%B5%EB%B6%80/"><div class="card-body"> <em class="small" data-ts="1721098800" data-df="ll" > Jul 16, 2024 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>css 공부 정리</h3><div class="text-muted small"><p> 1. CSS Syntax h1 {color:blue; font-size:12px;} h1: selector, points to the HTML element color: property blue: value 2. CSS Selector element selector id selector #paral {color: red;} ...</p></div></div></a></div><div class="card"> <a href="/posts/js-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/"><div class="card-body"> <em class="small" data-ts="1721098800" data-df="ll" > Jul 16, 2024 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>js 공부 정리</h3><div class="text-muted small"><p> Javascript 공부 1. 기본 문법 Hello world! 1 2 3 4 &amp;lt;script&amp;gt; alert(&#39;Hello world&#39;); &amp;lt;/script&amp;gt; &amp;lt;script src=&quot;/path/to/script.js&quot;&amp;gt;&amp;lt;/script&amp;gt; 주석 1 2 3 4 //주...</p></div></div></a></div><div class="card"> <a href="/posts/photomap-%EA%B0%9C%EB%B0%9C-%EA%B8%B0%EB%A1%9D/"><div class="card-body"> <em class="small" data-ts="1747106280" data-df="ll" > May 13, 2025 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>Photomap 개발 기록</h3><div class="text-muted small"><p> Photomap 개발 기록 작년 여름부터, photomap이라는 웹 플랫폼을 만들고 있다. 쉽게 말하면, 사진가들이 자신들이 찍은 사진을 지도 기반으로 공유할 수 있는 플랫폼이다. 항상 사진을 찍을 때마다 어디로가서 어떤 사진을 찍을 지 고민이 많았는데, 사진가들끼리 지도 기반으로 공유할 수 있는 플랫폼이 있으면 좋겠다는 생각을 해서 개인 프로젝트로...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/posts/css-%EA%B3%B5%EB%B6%80/" class="btn btn-outline-primary" prompt="Older"><p>css 공부 정리</p></a> <a href="/posts/js-%EA%B3%B5%EB%B6%80-%EC%A0%95%EB%A6%AC/" class="btn btn-outline-primary" prompt="Newer"><p>js 공부 정리</p></a></div><script type="text/javascript"> $(function () { const origin = "https://giscus.app"; const iframe = "iframe.giscus-frame"; const lightTheme = "light"; const darkTheme = "dark_dimmed"; let initTheme = lightTheme; if ($("html[data-mode=dark]").length > 0 || ($("html[data-mode]").length == 0 && window.matchMedia("(prefers-color-scheme: dark)").matches)) { initTheme = darkTheme; } let giscusAttributes = { "src": "https://giscus.app/client.js", "data-repo": "dgg1dbg/dgg1dbg.github.io", "data-repo-id": "R_kgDOH8CEaQ", "data-category": "General", "data-category-id": "DIC_kwDOH8CEac4CRO2Z", "data-mapping": "pathname", "data-reactions-enabled": "1", "data-emit-metadata": "0", "data-theme": initTheme, "data-input-position": "bottom", "data-lang": "", "crossorigin": "anonymous", "async": "" }; let giscusScript = document.createElement("script"); Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value)); document.getElementById("tail-wrapper").appendChild(giscusScript); addEventListener("message", (event) => { if (event.source === window && event.data && event.data.direction === ModeToggle.ID) { /* global theme mode changed */ const mode = event.data.message; const theme = (mode === ModeToggle.DARK_MODE ? darkTheme : lightTheme); const message = { setConfig: { theme: theme } }; const giscus = document.querySelector(iframe).contentWindow; giscus.postMessage({ giscus: message }, origin); } }); }); </script></div></div></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/tags/book-review/">Book Review</a> <a class="post-tag" href="/tags/python/">Python</a> <a class="post-tag" href="/tags/frontend/">frontend</a> <a class="post-tag" href="/tags/dpdk/">DPDK</a> <a class="post-tag" href="/tags/hft/">HFT</a> <a class="post-tag" href="/tags/math/">Math</a> <a class="post-tag" href="/tags/network/">Network</a> <a class="post-tag" href="/tags/number-theory/">Number Theory</a> <a class="post-tag" href="/tags/ai/">AI</a> <a class="post-tag" href="/tags/css/">css</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><footer><div class="container pl-lg-4 pr-lg-4"><div class="d-flex justify-content-between align-items-center text-muted ml-md-3 mr-md-3"><div class="footer-left"><p class="mb-0"> © 2025 <a href="https://twitter.com/username">Jeong Min Lee</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0">Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></div></footer><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lazysizes@5.3.2/lazysizes.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/en.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/app.js"></script> <script defer src="https://www.googletagmanager.com/gtag/js?id=G-MT5785FP0G"></script> <script> document.addEventListener("DOMContentLoaded", function(event) { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-MT5785FP0G'); }); </script>
