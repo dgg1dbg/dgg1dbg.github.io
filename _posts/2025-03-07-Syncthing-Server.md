@@ -1,7 +1,7 @@
 ---
 title: '라즈베리 파이로 Syncthing 서버 만들기'
 date: 2025-03-17 11:24:00 +0900
-categories: ['WEB', 'NETWORK']
+categories: ['Project', 'Syncthing']
 tags: []
 math: false
 ---
